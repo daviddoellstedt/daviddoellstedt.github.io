@@ -1,0 +1,30 @@
+.node {
+
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-left: 1px;
+    margin-bottom: 1px;
+    outline:1px solid #000;
+}
+
+.node-finish {
+    background-color: red;
+}
+
+.node-start {
+    background-color: green;
+}
+
+.node-visited {
+    background-color: blue;
+}
+
+.node-bestPath {
+    background-color: yellow;
+}
+
+.node-wall {
+    background-color: black;
+}
+
