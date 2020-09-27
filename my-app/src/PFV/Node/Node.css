@@ -17,7 +17,7 @@
 }
 
 .node-visited {
-    background-color: blue;
+    background-color: lightskyblue;
 }
 
 .node-bestPath {

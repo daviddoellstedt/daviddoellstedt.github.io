@@ -6,14 +6,14 @@ import {getMaze} from '../Algorithms/mazeGeneration.js'
 
 import './PathfindingVisualizer.css';
 
-const START_NODE_ROW = 4;
-const START_NODE_COL = 5;
-const GOAL_NODE_ROW = 21;
-const GOAL_NODE_COL = 8;
+const START_NODE_ROW = 0;
+const START_NODE_COL = 0;
+const GOAL_NODE_ROW = 30;
+const GOAL_NODE_COL = 69;
 const goal = [GOAL_NODE_ROW, GOAL_NODE_COL];
 const start = [START_NODE_ROW, START_NODE_COL];
-const GRID_ROWS = 35;
-const GRID_COLS = 35;
+const GRID_ROWS = 35; //odd
+const GRID_COLS = 75; //odd
 
 export default class PathfindingVisualizer extends Component{
 
@@ -25,7 +25,7 @@ export default class PathfindingVisualizer extends Component{
     }
 
     componentWillMount(){
-       //window.alert(START_NODE_ROW);
+
         const nodes = [];
         for (let row = 0; row < GRID_ROWS; row++){
             const currentRow = [];
@@ -57,10 +57,14 @@ export default class PathfindingVisualizer extends Component{
             for(let j = 0; j < maze[0].length; j++) {
                 // const node = [i, j]
                 if (maze[i][j] === 1) {
+
                     setTimeout(() => {
+                           // document.getElementById(`node-${i}-${j}`).className = 'node node-wall';
+                            document.getElementById(`node-${i}-${j}`).isWall = true;
+                           // window.alert(document.getElementById(`node-${i}-${j}`).isWall)
                             document.getElementById(`node-${i}-${j}`).className = 'node node-wall';
                         },
-                        10 * i);
+                        15 * i + 15 * j);
                 }
             }
         }

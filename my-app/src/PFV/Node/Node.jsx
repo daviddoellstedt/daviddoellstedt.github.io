@@ -10,11 +10,13 @@ export default class Node extends Component{
     // }
 
     render(){
-        const {row, col, isFinish, isStart} = this.props;
-        const extraClassName = isFinish ? 'node-finish' : isStart ? 'node-start': '';
+        const {row, col, isFinish, isStart, isWall} = this.props;
+        const extraClassName = isFinish ? 'node-finish' : isStart ? 'node-start': isWall? 'node-wall': '';
+        //const isWall={isWall};
         return <div
             id={`node-${row}-${col}`}
             className={`node ${extraClassName}`}
+
             >
 
         </div>;
